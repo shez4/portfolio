@@ -34,7 +34,7 @@ export default function Home() {
           </div>
           
           {/* Scroll Indicator */}
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
@@ -52,23 +52,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Projects */}
-            <Link href="/projects" className="block">
-              <div className="glass rounded-2xl p-8 text-center card-hover h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold mb-3">Technical Projects</h3>
-                <p className="text-gray-600 mb-4">
-                  Automation scripts, server configurations, network setups, and development projects
-                </p>
-                <span className="text-blue-600 font-semibold">View All Projects →</span>
-              </div>
-            </Link>
-            
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Homelab */}
             <Link href="/homelab" className="block">
               <div className="glass rounded-2xl p-8 text-center card-hover h-full">
@@ -79,7 +63,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Homelab</h3>
                 <p className="text-gray-600 mb-4">
-                  Proxmox, Pi-hole, Ubuntu Server, network infrastructure, and virtualization projects
+                  Pi-hole, Ubuntu Desktop, network infrastructure, and virtualization projects
                 </p>
                 <span className="text-cyan-600 font-semibold">Explore Homelab →</span>
               </div>
@@ -112,15 +96,15 @@ export default function Home() {
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>
                 <h4 className="font-bold text-lg mb-3 text-gray-800">Operating Systems</h4>
-                <p className="text-gray-600 text-sm">Windows Server, Linux (Ubuntu, Debian), Proxmox VE</p>
+                <p className="text-gray-600 text-sm">Windows Server, Linux (Ubuntu), Proxmox VE</p>
               </div>
               <div>
                 <h4 className="font-bold text-lg mb-3 text-gray-800">Networking</h4>
-                <p className="text-gray-600 text-sm">TCP/IP, DNS, DHCP, VLANs, Firewalls, VPN</p>
+                <p className="text-gray-600 text-sm">TCP/IP, DNS, DHCP, VLANs</p>
               </div>
               <div>
                 <h4 className="font-bold text-lg mb-3 text-gray-800">Tools & Services</h4>
-                <p className="text-gray-600 text-sm">Active Directory, Pi-hole, Docker, Git, PowerShell</p>
+                <p className="text-gray-600 text-sm">Active Directory, Pi-hole, Twingate, Git</p>
               </div>
               <div>
                 <h4 className="font-bold text-lg mb-3 text-gray-800">Troubleshooting</h4>

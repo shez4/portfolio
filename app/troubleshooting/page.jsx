@@ -111,81 +111,23 @@ function TroubleshootingCard({ title, problem, investigation, steps, tools, root
 // Sample troubleshooting cases - Easy to add more
 const troubleshootingCases = [
   {
-    title: 'Network Connectivity Issues - Users Unable to Access Internet',
-    problem: 'Multiple users reporting intermittent internet connectivity issues. Some devices could connect while others could not.',
-    investigation: 'Checked physical connections, verified router status lights, tested connectivity from different devices and network segments.',
+    title: 'Slow Boot Up',
+    problem: 'When powering on the computer it takes about 20 minutes to boot up and takes a few minutes to load up applications.',
+    investigation: 'Checked system specifications, reviewed boot process, analyzed disk performance, and examined startup programs.',
     steps: [
-      'Verified physical cable connections and switch port status',
-      'Ran ping tests to gateway and external DNS servers',
-      'Checked DHCP server for IP address conflicts',
-      'Reviewed firewall logs for blocked traffic',
-      'Tested DNS resolution using nslookup',
-      'Examined network adapter settings on affected devices'
+      'Checked Task Manager for startup programs',
+      'Ran disk health check using CrystalDiskInfo',
+      'Monitored boot time using Event Viewer',
+      'Tested disk read/write speeds',
+      'Checked available storage space',
+      'Reviewed system specifications and age of hardware',
+      'Researched M.2 SSD compatibility with motherboard',
+      'Backed up important data before hardware swap'
     ],
-    tools: ['ping', 'ipconfig', 'nslookup', 'tracert', 'Event Viewer', 'Router Admin Panel'],
-    rootCause: 'DHCP server was running out of available IP addresses in the pool. Some devices received duplicate IPs causing conflicts.',
-    fix: 'Expanded DHCP pool range, cleared old DHCP leases, and set appropriate lease times. Renewed IP addresses on affected devices using ipconfig /release and /renew.',
-    prevention: 'Implemented regular monitoring of DHCP scope utilization, set up alerts for low IP availability, and documented proper lease time configurations.',
-    difficulty: 'Intermediate'
-  },
-  {
-    title: 'Windows Update Failing - Error 0x80070002',
-    problem: 'User unable to install Windows updates. Error code 0x80070002 appearing repeatedly during update installation.',
-    investigation: 'Checked Windows Update history, reviewed Windows Update logs, verified disk space and system file integrity.',
-    steps: [
-      'Checked available disk space on C: drive',
-      'Ran Windows Update Troubleshooter',
-      'Stopped Windows Update service',
-      'Cleared SoftwareDistribution folder contents',
-      'Ran SFC /scannow to check system files',
-      'Ran DISM tool to repair Windows image',
-      'Restarted Windows Update service',
-      'Manually triggered update check'
-    ],
-    tools: ['Windows Update Troubleshooter', 'Command Prompt', 'SFC', 'DISM', 'Services.msc', 'Event Viewer'],
-    rootCause: 'Corrupted Windows Update cache files in the SoftwareDistribution folder preventing new updates from downloading correctly.',
-    fix: 'Cleared the SoftwareDistribution folder after stopping Windows Update service, repaired system files with SFC and DISM, then restarted the service.',
-    prevention: 'Regular system maintenance including disk cleanup, periodic clearing of update cache, and monitoring of available disk space.',
-    difficulty: 'Basic'
-  },
-  {
-    title: 'Email Server - Messages Stuck in Outbox',
-    problem: 'Email messages not sending and remaining stuck in Outbox. Users unable to send external emails while internal emails worked fine.',
-    investigation: 'Verified email client settings, checked server connectivity, reviewed mail server logs, and tested SMTP relay.',
-    steps: [
-      'Verified SMTP server settings in email client',
-      'Tested telnet connection to SMTP port 587',
-      'Checked firewall rules for outbound SMTP traffic',
-      'Reviewed mail server logs for errors',
-      'Verified SPF and DKIM records in DNS',
-      'Tested email sending from webmail interface',
-      'Checked mail queue status on server',
-      'Verified antivirus not blocking email traffic'
-    ],
-    tools: ['Telnet', 'Mail Server Console', 'DNS Tools', 'Wireshark', 'Event Viewer', 'nslookup'],
-    rootCause: 'ISP blocking outbound port 25 for SMTP relay. Server trying to use port 25 instead of submission port 587 with authentication.',
-    fix: 'Reconfigured email server to use port 587 with TLS encryption and SMTP authentication. Updated all email clients to use the same settings.',
-    prevention: 'Document proper SMTP configuration settings, implement monitoring for mail queue buildup, and maintain email server configuration documentation.',
-    difficulty: 'Advanced'
-  },
-  {
-    title: 'Printer Not Responding - Network Printer Offline',
-    problem: 'Network printer showing as offline on multiple computers. Print jobs queuing but not printing.',
-    investigation: 'Checked printer physical status, verified network connectivity, tested from different computers, reviewed printer spooler service.',
-    steps: [
-      'Verified printer powered on and showing ready status',
-      'Checked network cable connection and switch port',
-      'Pinged printer IP address from multiple devices',
-      'Checked printer driver version and status',
-      'Cleared print spooler queue',
-      'Restarted print spooler service',
-      'Removed and re-added printer',
-      'Updated printer firmware and drivers'
-    ],
-    tools: ['ping', 'Print Management Console', 'Services.msc', 'Device Manager', 'Printer Web Interface'],
-    rootCause: 'Printer had static IP that conflicted with DHCP-assigned address. Print spooler service was also stuck due to corrupted print job.',
-    fix: 'Assigned printer a reserved DHCP address based on MAC, cleared spooler, restarted services, and updated printer drivers on all affected computers.',
-    prevention: 'Implement proper IP address management, use DHCP reservations for network printers, and maintain updated driver versions.',
+    tools: ['Task Manager', 'CrystalDiskInfo', 'Event Viewer', 'Disk Management', 'System Information'],
+    rootCause: 'The computer was using an HDD which had the OS installed on it. Traditional hard drives have much slower read/write speeds compared to SSDs.',
+    fix: 'Swapped the HDD with an M.2 drive. Cloned the OS to the new drive and configured the system to boot from the faster storage.',
+    prevention: 'Use SSD storage for operating systems, regular disk health monitoring, and keep startup programs to a minimum.',
     difficulty: 'Basic'
   }
 ]

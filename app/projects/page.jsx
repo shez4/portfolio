@@ -2,51 +2,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ProjectCard from '@/components/ProjectCard'
 
-// Sample projects - You can easily add more here
-const projects = [
-  {
-    title: 'PowerShell Automation Scripts',
-    description: 'Collection of PowerShell scripts for automating Windows Server administration tasks, user management, and system monitoring.',
-    tags: ['PowerShell', 'Windows Server', 'Automation'],
-    github: 'https://github.com/yourusername/powershell-scripts',
-    image: null
-  },
-  {
-    title: 'Network Monitoring Dashboard',
-    description: 'Custom dashboard for monitoring network devices, bandwidth usage, and system health using SNMP and real-time alerts.',
-    tags: ['Python', 'Networking', 'Monitoring'],
-    github: 'https://github.com/yourusername/network-monitor',
-    image: null
-  },
-  {
-    title: 'Active Directory Management Tool',
-    description: 'GUI tool for streamlining Active Directory user creation, group management, and permission assignments.',
-    tags: ['PowerShell', 'Active Directory', 'GUI'],
-    github: 'https://github.com/yourusername/ad-tool',
-    image: null
-  },
-  {
-    title: 'Backup Automation System',
-    description: 'Automated backup solution with scheduling, compression, and cloud upload capabilities for critical data.',
-    tags: ['Python', 'Automation', 'Cloud'],
-    github: 'https://github.com/yourusername/backup-system',
-    image: null
-  },
-  {
-    title: 'Server Configuration Templates',
-    description: 'Standardized configuration files and documentation for deploying Windows and Linux servers efficiently.',
-    tags: ['Linux', 'Windows Server', 'Documentation'],
-    github: 'https://github.com/yourusername/server-templates',
-    image: null
-  },
-  {
-    title: 'IT Ticketing System Integration',
-    description: 'Custom API integration connecting helpdesk ticketing system with monitoring tools for automated ticket creation.',
-    tags: ['API', 'JavaScript', 'Automation'],
-    github: 'https://github.com/yourusername/ticket-integration',
-    image: null
-  }
-]
+
 
 export default function Projects() {
   return (
@@ -61,41 +17,37 @@ export default function Projects() {
               Technical Projects
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A showcase of automation scripts, server configurations, networking projects, and development work. 
-              All projects are available on GitHub with full documentation.
+              This space is reserved for showcasing technical projects and development work. 
+              Check back soon as I begin documenting and sharing my projects!
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ProjectCard 
-                key={index}
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                github={project.github}
-                image={project.image}
-              />
-            ))}
+          {/* Projects Section */}
+          <div className="flex justify-center">
+            <div className="glass rounded-2xl p-12 max-w-2xl text-center">
+              <div className="text-6xl mb-6">🚧</div>
+              <h3 className="text-2xl font-bold mb-4">Projects Coming Soon</h3>
+              <p className="text-gray-600 mb-6">
+                I'm currently setting up this section to showcase technical projects, 
+                automation scripts, and development work. Stay tuned for updates!
+              </p>
+              <div className="text-sm text-gray-500">
+                <p>This section will feature real-world projects and solutions</p>
+              </div>
+            </div>
           </div>
 
           {/* Add More Note */}
           <div className="mt-16 text-center">
             <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-3">More Projects Coming Soon</h3>
+              <h3 className="text-2xl font-bold mb-3">Building Something Great</h3>
               <p className="text-gray-600">
-                I'm constantly working on new projects and documenting existing work. 
-                Check back regularly or visit my GitHub for the latest updates.
+                This portfolio is a work in progress. As I develop new projects and 
+                document existing work, they'll be featured here with full details and documentation.
               </p>
-              <a 
-                href="https://github.com/shez4" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block mt-6 btn-primary"
-              >
-                Visit GitHub Profile
-              </a>
+              <div className="mt-6 text-sm text-gray-500">
+                <p>💡 Ideas in development • 🔨 Projects in planning</p>
+              </div>
             </div>
           </div>
         </div>

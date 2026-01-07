@@ -62,51 +62,19 @@ function HomelabCard({ title, description, purpose, tools, learned, status = 'Ac
 // Sample homelab projects - Easy to add more
 const homelabProjects = [
   {
-    title: 'Proxmox VE Virtualization Server',
-    description: 'Primary virtualization platform running multiple VMs and containers for various services and testing environments.',
-    purpose: 'Centralized virtualization platform for running multiple services, testing new technologies, and learning enterprise virtualization.',
-    tools: ['Proxmox VE', 'KVM', 'LXC', 'ZFS', 'Backup'],
-    learned: 'Virtual machine management, resource allocation, snapshot management, clustering concepts, and disaster recovery planning.',
-    status: 'Active'
-  },
-  {
-    title: 'Pi-hole Network-Wide Ad Blocker',
+    title: 'Ad Blocker',
     description: 'DNS-level ad blocking and network monitoring running on Raspberry Pi, protecting all devices on the network.',
     purpose: 'Block ads and trackers across all network devices, improve browsing speed, and monitor DNS queries.',
-    tools: ['Pi-hole', 'Raspberry Pi', 'DNS', 'DHCP', 'Grafana'],
+    tools: ['Pi-hole', 'Raspberry Pi', 'DNS', 'DHCP'],
     learned: 'DNS fundamentals, network-level filtering, DHCP configuration, and network traffic analysis.',
-    status: 'Active'
-  },
-  {
-    title: 'Ubuntu Server with Docker Services',
-    description: 'Linux server hosting containerized applications including web services, databases, and monitoring tools.',
-    purpose: 'Learn Linux server administration, containerization, and self-host various applications.',
-    tools: ['Ubuntu Server', 'Docker', 'Docker Compose', 'Portainer', 'Nginx'],
-    learned: 'Linux command line, Docker containerization, reverse proxy configuration, and service orchestration.',
-    status: 'Active'
+    status: 'Planning'
   },
   {
     title: 'Network Storage & File Server',
     description: 'Centralized storage solution with SMB/NFS shares for backups, media, and file sharing across the network.',
     purpose: 'Provide reliable centralized storage with redundancy and easy access from all devices.',
-    tools: ['TrueNAS', 'Samba', 'NFS', 'RAID', 'Rsync'],
-    learned: 'Storage management, RAID configuration, network file sharing protocols, and backup strategies.',
-    status: 'Active'
-  },
-  {
-    title: 'Home Network Infrastructure',
-    description: 'Segmented network with VLANs, managed switches, and pfSense firewall for enhanced security and performance.',
-    purpose: 'Create a secure, organized network with proper segmentation for IoT, guests, and lab equipment.',
-    tools: ['pfSense', 'Managed Switch', 'VLANs', 'VPN', 'Firewall Rules'],
-    learned: 'Network segmentation, VLAN configuration, firewall rules, VPN setup, and traffic routing.',
-    status: 'In Progress'
-  },
-  {
-    title: 'Monitoring & Logging Stack',
-    description: 'Comprehensive monitoring solution tracking system health, network performance, and application metrics.',
-    purpose: 'Monitor all homelab services, track performance metrics, and receive alerts for issues.',
-    tools: ['Prometheus', 'Grafana', 'Loki', 'Node Exporter', 'Alertmanager'],
-    learned: 'System monitoring, metric collection, log aggregation, dashboard creation, and alerting systems.',
+    tools: ['Twingate', 'Samba', 'User & Access Management', 'Security', ],
+    learned: 'Storage management, Twingate, network file sharing protocols.',
     status: 'Active'
   }
 ]
@@ -131,12 +99,18 @@ export default function Homelab() {
             {/* Quick Stats */}
             <div className="flex justify-center gap-8 flex-wrap">
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-600">6+</div>
+                <div className="text-3xl font-bold text-cyan-600">
+                  {homelabProjects.filter(project => project.status === 'Active').length}
+                </div>
                 <div className="text-gray-600 text-sm">Active Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-cyan-600">10+</div>
-                <div className="text-gray-600 text-sm">VMs Running</div>
+                <div className="text-3xl font-bold text-cyan-600">
+                  {homelabProjects
+                    .filter(project => project.status === 'Active')
+                    .reduce((total, project) => total + project.tools.length, 0)}
+                </div>
+                <div className="text-gray-600 text-sm">Services Running</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-cyan-600">24/7</div>
@@ -163,7 +137,7 @@ export default function Homelab() {
                   </svg>
                 </div>
                 <h3 className="font-bold text-lg mb-2">Hardware</h3>
-                <p className="text-gray-600 text-sm">Dell PowerEdge Server, Raspberry Pi 4, Synology NAS, Managed Network Switch</p>
+                <p className="text-gray-600 text-sm">Dell mini pc, Raspberry Pi 4, Synology NAS, Managed Network Switch</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -172,7 +146,7 @@ export default function Homelab() {
                   </svg>
                 </div>
                 <h3 className="font-bold text-lg mb-2">Software</h3>
-                <p className="text-gray-600 text-sm">Proxmox, Docker, Ubuntu Server, pfSense, Pi-hole, Grafana, Prometheus</p>
+                <p className="text-gray-600 text-sm">Twingate, Pi-hole, Linux users/groups</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -181,21 +155,8 @@ export default function Homelab() {
                   </svg>
                 </div>
                 <h3 className="font-bold text-lg mb-2">Services</h3>
-                <p className="text-gray-600 text-sm">Web hosting, DNS, VPN, File sharing, Media server, Monitoring, Backups</p>
+                <p className="text-gray-600 text-sm">Ad Blocker, File sharing</p>
               </div>
-            </div>
-          </div>
-
-          {/* Future Plans */}
-          <div className="text-center">
-            <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-3">Future Expansions</h3>
-              <p className="text-gray-600 mb-4">
-                Planning to add Kubernetes cluster, automated CI/CD pipeline, and expanded monitoring capabilities.
-              </p>
-              <p className="text-sm text-gray-500">
-                Documentation for each project will be added with detailed setup guides and configurations.
-              </p>
             </div>
           </div>
         </div>

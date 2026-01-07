@@ -2,23 +2,23 @@ export default function Timeline() {
   const events = [
     { 
       year: '2025', 
-      title: 'IT Studies & Certification Path', 
-      description: 'Pursuing CompTIA A+ certification while building practical skills through homelab projects and documentation'
+      title: 'Homelab Setup & Bachelor\'s Completion', 
+      description: 'Set up comprehensive homelab environment and completed Bachelor\'s degree in Software Engineering'
     },
     { 
       year: '2024', 
-      title: 'Homelab Expansion', 
-      description: 'Built comprehensive homelab with Proxmox, Docker services, Pi-hole, network segmentation, and monitoring stack'
+      title: 'PC Assembly', 
+      description: 'Gained hands-on experience building and assembling personal computers from components'
     },
     { 
       year: '2023', 
-      title: 'Started IT Journey', 
-      description: 'Began learning system administration, networking fundamentals, and troubleshooting methodologies'
+      title: 'Diploma in Information Technology', 
+      description: 'Completed comprehensive diploma program covering IT fundamentals and practical applications'
     },
     { 
       year: '2022', 
-      title: 'First Custom PC Build', 
-      description: 'Built first computer from scratch, sparking deep interest in hardware and system configuration'
+      title: 'Certificate in Information Technology', 
+      description: 'Earned certification focusing on Microsoft 365 applications and cloud-based productivity tools'
     },
   ]
 

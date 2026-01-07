@@ -4,16 +4,14 @@ import Timeline from '@/components/Timeline'
 
 export default function About() {
   const skills = {
-    'Operating Systems': ['Windows 10/11', 'Windows Server 2019/2022', 'Ubuntu Server', 'Debian', 'Proxmox VE'],
-    'Networking': ['TCP/IP', 'DNS/DHCP', 'VLANs', 'VPN', 'Firewall Configuration', 'Network Troubleshooting'],
-    'Tools & Software': ['Active Directory', 'PowerShell', 'Docker', 'Git', 'Pi-hole', 'Grafana', 'VMware', 'Hyper-V'],
-    'Hardware': ['PC Building & Repair', 'Server Hardware', 'Network Equipment', 'Raspberry Pi', 'Storage Systems']
+    'Operating Systems': ['Windows 10/11', 'Ubuntu Desktop', 'MacOS'],
+    'Networking': ['TCP/IP', 'DNS/DHCP', 'VPN', 'Network Troubleshooting'],
+    'Tools & Software': ['Visual Studio', 'GitHub', 'VS Code', 'Figma', 'Zendesk', 'Active Directory'],
+    'Hardware': ['PC Building & Repair', 'Server Hardware', 'Network Equipment', 'Storage Systems']
   }
 
   const certifications = [
-    'CompTIA A+ (In Progress)',
-    'CompTIA Network+ (Planned)',
-    'Microsoft Certified: Azure Fundamentals (Planned)'
+    'Bachelor of Software Engineering (Final Semester Completed)'
   ]
 
   return (
@@ -31,7 +29,7 @@ export default function About() {
               About Me
             </h1>
             <p className="text-xl text-gray-600">
-              IT Support Specialist | Homelab Enthusiast | Continuous Learner
+              Software Engineering | Homelab Enthusiast | Continuous Learner
             </p>
           </div>
 
@@ -92,9 +90,6 @@ export default function About() {
                   </div>
                 ))}
               </div>
-              <p className="text-center text-gray-600 mt-6">
-                Currently pursuing CompTIA A+ certification while building practical experience through homelab projects
-              </p>
             </div>
           </div>
 
@@ -112,8 +107,8 @@ export default function About() {
                 View my complete work history, skills, and qualifications
               </p>
               <a 
-                href="/resume.pdf" 
-                download
+                href="/ShanalRathnaweera_CV.pdf" 
+                download="Shanal_Rathnaweera_CV.pdf"
                 className="btn-primary inline-flex items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,7 +117,7 @@ export default function About() {
                 Download CV (PDF)
               </a>
               <p className="text-sm text-gray-500 mt-4">
-                (Upload your resume.pdf file to the /public folder)
+                (CV file: ShanalRathnaweera_CV.pdf)
               </p>
             </div>
           </div>

@@ -21,30 +21,40 @@ Visit: [Your Domain Here]
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Next.js 14+ (App Router)
-- **Styling**: Tailwind CSS 4
+- **Framework**: Next.js 16.0.10 (App Router)
+- **Styling**: Tailwind CSS 4.1.17
 - **Language**: JavaScript
 - **Hosting**: Vercel (recommended)
+- **Build Tools**: PostCSS 8.5.6, Autoprefixer 10.4.22
 
 ## 📦 Installation
 
 ### Prerequisites
 
-- Node.js 18+ installed
-- npm or yarn package manager
+- Node.js 18+ installed (recommended: Node.js 20+)
+- npm package manager (included with Node.js)
 
 ### Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/shez4/portfolio.git
+git clone https://github.com/shez4/Portfolio.git
 cd portfolio
 ```
 
 2. Install dependencies:
 ```bash
 npm install
+# This will install:
+# - next (16.0.10)
+# - react (19.2.1) 
+# - react-dom (19.2.1)
+# - tailwindcss (4.1.17)
+# - postcss (8.5.6)
+# - autoprefixer (10.4.22)
 ```
+
+   **Note**: Run `npm audit` after installation to check for security vulnerabilities. Use `npm audit fix` if any are found.
 
 3. Run the development server:
 ```bash
@@ -148,25 +158,37 @@ portfolio/
 ├── app/
 │   ├── layout.jsx          # Root layout with navigation
 │   ├── page.jsx            # Homepage with hero and overview
-│   ├── projects/
-│   │   └── page.jsx        # Technical projects showcase
-│   ├── homelab/
-│   │   └── page.jsx        # Homelab infrastructure
-│   ├── troubleshooting/
-│   │   └── page.jsx        # IT troubleshooting cases
+│   ├── globals.css         # Global styles and Tailwind imports
 │   ├── about/
 │   │   └── page.jsx        # About, skills, certifications
-│   └── globals.css         # Global styles and animations
+│   ├── contact/
+│   │   └── page.jsx        # Contact information
+│   ├── projects/
+│   │   └── homelab/        # Homelab project details
+│   └── troubleshooting/
+│       ├── page.jsx        # IT troubleshooting cases
+│       └── slow-wifi/      # Specific troubleshooting case
 ├── components/
-│   ├── Navbar.jsx          # Navigation bar
+│   ├── CodeBlock.jsx       # Code display component
 │   ├── Footer.jsx          # Footer with links
+│   ├── ImageGallery.jsx    # Image gallery component
+│   ├── Navbar.jsx          # Navigation bar
 │   ├── ProjectCard.jsx     # Reusable project card
-│   └── Timeline.jsx        # Timeline component
+│   ├── SectionCard.jsx     # Section card component
+│   ├── Timeline.jsx        # Timeline component
+│   └── TroubleshootingSteps.jsx # Troubleshooting steps
+├── Content/
+│   ├── homelab/            # Homelab content files
+│   ├── software/           # Software-related content
+│   └── troubleshooting/    # Troubleshooting content
 ├── public/
 │   └── images/             # Place images here
+├── styles/
+│   └── markdown.css        # Markdown styling
 ├── tailwind.config.js      # Tailwind configuration
 ├── postcss.config.js       # PostCSS configuration
-└── package.json            # Dependencies
+├── next.config.js          # Next.js configuration
+└── package.json            # Dependencies and scripts
 ```
 
 ## 🎨 Customization
@@ -193,10 +215,27 @@ Place images in the `public/images` folder and reference them as:
 
 ## 🔧 Available Scripts
 
-- `npm run dev` - Start development server
+- `npm run dev` - Start development server (http://localhost:3000)
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run linting
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+1. **Module not found errors**: Ensure all dependencies are installed with `npm install`
+2. **Security vulnerabilities**: Run `npm audit fix` to resolve known vulnerabilities
+3. **Port 3000 already in use**: Kill existing processes or use a different port with `npm run dev -- -p 3001`
+4. **Build errors**: Check that all required files exist in the project structure
+
+### Getting Help
+
+If you encounter issues:
+1. Check the console for error messages
+2. Ensure Node.js version is 18 or higher
+3. Try deleting `node_modules` and running `npm install` again
+4. Check that all configuration files are present
 
 ## 📄 License
 
