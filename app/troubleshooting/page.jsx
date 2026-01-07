@@ -111,7 +111,7 @@ function TroubleshootingCard({ title, problem, investigation, steps, tools, root
 // Sample troubleshooting cases - Easy to add more
 const troubleshootingCases = [
   {
-    title: 'Slow Boot Up',
+      title: 'Slow Boot Up',
     problem: 'When powering on the computer it takes about 20 minutes to boot up and takes a few minutes to load up applications.',
     investigation: 'Checked system specifications, reviewed boot process, analyzed disk performance, and examined startup programs.',
     steps: [
