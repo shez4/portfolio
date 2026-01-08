@@ -2,11 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for Theme */
+:root {
+  --bg-primary: linear-gradient(to bottom right, #f8fafc, #eff6ff, #eef2ff);
+  --bg-secondary: rgba(255, 255, 255, 0.8);
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.8);
+}
+
+.dark {
+  --bg-primary: linear-gradient(to bottom right, #0f0f0f, #1a1a1a, #262626);
+  --bg-secondary: rgba(17, 17, 17, 0.8);
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(17, 17, 17, 0.8);
+}
+
 /* Base Styles */
 body {
-  background: linear-gradient(to bottom right, #f8fafc, #eff6ff, #eef2ff);
+  background: var(--bg-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -63,13 +84,29 @@ html {
   border-color: #3b82f6;
 }
 
+.dark .btn-secondary {
+  background: #374151;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.dark .btn-secondary:hover {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
 /* Glass Effect */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .glass {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
 /* Floating Animation */
@@ -148,5 +185,40 @@ html {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+/* Dark mode text colors */
+.dark .text-gray-600 {
+  color: #9ca3af;
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db;
+}
+
+.dark .text-gray-800 {
+  color: #f3f4f6;
+}
+
+/* Dark mode backgrounds */
+.dark .bg-white {
+  background-color: #1f2937;
+}
+
+.dark .bg-gray-50 {
+  background-color: #111827;
+}
+
+.dark .bg-gray-100 {
+  background-color: #374151;
+}
+
+/* Dark mode borders */
+.dark .border-gray-200 {
+  border-color: #374151;
+}
+
+.dark .border-gray-300 {
+  border-color: #4b5563;
 }
 
